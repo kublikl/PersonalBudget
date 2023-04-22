@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Expenses>
+<Expense>
+<ExpenseId>1</ExpenseId>
+<UserId>1</UserId>
+<Date>2023-04-21</Date>
+<Item>gg</Item>
+<Amount>50</Amount>
+</Expense>
+</Expenses>
