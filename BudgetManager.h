@@ -28,7 +28,7 @@ class BudgetManager
 public:
     BudgetManager(int idLoggedUser) : ID_OF_LOGGED_USER(idLoggedUser)
     {
-
+        incomes = fileWithIncomesXML.loadIncomesFromFile(ID_OF_LOGGED_USER);
     };
 
     void addIncome(int idLoggedUser);
