@@ -17,7 +17,7 @@ using namespace std;
 
 class BudgetManager
 {
-private:
+
     const int ID_OF_LOGGED_USER;
     int idLoggedUser;
     vector <Income> incomes;

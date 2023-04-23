@@ -25,7 +25,8 @@ class UserManager
 public:
     UserManager()
     {
-
+        idLoggedUser = 0;
+        users = fileWithUsersXML.loadUsersFromFile();
     };
 
     void registrationOfUser();

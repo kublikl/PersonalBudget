@@ -14,7 +14,7 @@ class User
     string password;
 
 public:
-    User ()
+    User (int id = 0, string name = "", string lastName = "", string login = "", string password = "")
     {
 
     }

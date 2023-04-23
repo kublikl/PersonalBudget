@@ -12,10 +12,11 @@ using namespace std;
 
 class FileWithUsersXML
 {
-private:
+
     void getDataOfUser();
 
 public:
+
     void addUserToFile(User user);
     vector <User> loadUsersFromFile();
     void updatePasswordInFile(User user);

@@ -10,7 +10,7 @@ void UserManager::registrationOfUser()
 
     users.push_back(user);
 
-  //  fileWithUsersXML.addUserToFile(user);
+    fileWithUsersXML.addUserToFile(user);
 
     cout << endl << "Your account is created successfully!" << endl << endl;
     Sleep(500);
@@ -47,11 +47,13 @@ User UserManager::typeDataOfNewUser()
     cout << "Enter password: ";
     cin >> password;
 
+
     user.setName(name);
     user.setLastName(lastName);
     user.setPassword(password);
 
     return user;
+
 }
 
 int UserManager::establishNewUserID()
