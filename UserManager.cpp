@@ -140,7 +140,7 @@ int UserManager::logIn()
                     return idLoggedUser;
                 }
             }
-            cout << "Password was entered incorrectyl 3 times!" << endl;
+            cout << "Password was entered incorrecty 3 times!" << endl;
             system("pause");
 
             return 0;
