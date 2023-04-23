@@ -12,7 +12,7 @@ using namespace std;
 
 class FileWithIncomesXML
 {
-private:
+
 
 public:
     void addIncomeToFile(Income income);
