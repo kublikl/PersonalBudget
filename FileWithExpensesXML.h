@@ -12,7 +12,7 @@ using namespace std;
 
 class FileWithExpensesXML
 {
-private:
+
 
 public:
     void addExpenseToFile(Expense expense);

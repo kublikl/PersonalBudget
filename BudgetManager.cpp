@@ -60,6 +60,57 @@ void BudgetManager::addIncome(int idLoggedUser)
 
 void BudgetManager::addExpense(int idLoggedUser)
 {
+    Expense expense;
+
+    expense.setExpenseId(fileWithExpensesXML.establishNewExpenseIdFromFile());
+    expense.setUserId(idLoggedUser);
+
+    string date = "";
+    bool flag = true;
+
+    while (flag)
+    {
+        cout << "Expense from today? y / n" << endl;
+        char choice = AuxillaryMethods::loadCharacter();
+        switch(choice)
+        {
+        case 'y':
+            flag = false;
+            date = OperationOnDates::getTodaysDate();
+            expense.setDate(date);
+            break;
+        case 'n':
+            flag = false;
+            date = OperationOnDates::loadAndCheckDate();
+            expense.setDate(date);
+            break;
+        default:
+            cout << endl << "There is no option like this." << endl << endl;
+            system("pause");
+            break;
+        }
+    }
+
+    string typeOfExpense = "";
+    cout<< "What kind of expense is this?" << endl;
+
+    typeOfExpense = AuxillaryMethods::loadLine();
+    expense.setTypeOfExpense(typeOfExpense);
+
+    string amountString = "";
+    cout<< "How many is that?" << endl;
+
+    amountString = AuxillaryMethods::loadLine();
+
+    amountString = AuxillaryMethods::checkComma(amountString);
+    float amount = stof(amountString);
+    expense.setAmount(amount);
+
+    fileWithExpensesXML.addExpenseToFile(expense);
+    expenses.push_back(expense);
+
+    cout << endl << "Your expense is added successfully!" << endl << endl;
+    system("pause");
 
 
 }

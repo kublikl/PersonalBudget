@@ -69,7 +69,7 @@ vector <Income> FileWithIncomesXML::loadIncomesFromFile(int idLoggedUser)
 
                 incomes.push_back(income);
             }
-            xml.OutOfElem(); //out of Income - for checking other id's
+            xml.OutOfElem(); //out of Income, for checking other id's
         }
     }
     return incomes;
