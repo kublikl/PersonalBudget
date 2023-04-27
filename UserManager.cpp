@@ -161,7 +161,20 @@ bool UserManager::isUserLoggedIn()
 
 void UserManager::changePassword()
 {
+    string newPassword = "";
+    cout << endl << "Enter new password: ";
+    cin >> newPassword;
 
+    for (int i = 0; i < users.size(); i++)
+    {
+        if (users[i].getId() == idLoggedUser)
+        {
+            users[i].setPassword(newPassword);
+            fileWithUsersXML.updatePasswordInFile(users[i]);
+            cout << endl << "Password has been changed." << endl << endl;
+            system("pause");
+        }
+    }
 }
 
 void UserManager::logOut()
