@@ -72,5 +72,31 @@ vector <User> FileWithUsersXML::loadUsersFromFile()
 
 void FileWithUsersXML::updatePasswordInFile(User user)
 {
+    CMarkup xml;
+    bool fileExists = xml.Load( "users.xml" );
+    if (fileExists)
+    {
+        xml.FindElem();
+        xml.IntoElem(); //enter to Users
 
+        while( xml.FindElem("User"))
+        {
+            xml.IntoElem(); //enter to User
+            xml.FindElem("UserId");
+
+            int userId = atoi(xml.GetData().c_str());
+            if(user.getId() == userId)
+            {
+                xml.FindElem("Password");
+                xml.SetData(user.getPassword());
+                xml.Save("users.xml");
+            }
+            xml.OutOfElem(); //out of User - for checking others id
+        }
+    }
+    else
+    {
+        cout<< "Unknown error!" << endl;
+        system("pause");
+    }
 }
