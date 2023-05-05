@@ -1,6 +1,8 @@
 bin/
 obj/
-PersonalBudget.*
+PersonalBudget.cbp
 users.xml
 incomes.xml
 expenses.xml
+PersonalBudget.depend
+PersonalBudget.layout
